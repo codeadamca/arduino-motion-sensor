@@ -2,26 +2,34 @@
 A basic script to detect motion using an Arduino and a motion sensor.
 
 ```csharp
-int motion_1 = 2;
+/*
+
+*/
+
+int motionPin = 2;
 
 void setup(){
   
   Serial.begin(9600);
-  pinMode (motion_1,INPUT);
+  pinMode(motionPin, INPUT);
+  
+  pinMode(LED_BUILTIN, OUTPUT);
   
 }
 
 void loop (){
   
-  delay(1000); //this delay is to let the sensor settle down before taking a reading
+  delay(1000);
   
-  int sensor_1 = digitalRead(motion_1);
+  int motionResult = digitalRead(motionPin);
   
-  Serial.println(sensor_1);
+  Serial.println(motionResult);
   
-  if (sensor_1 == HIGH){
-    
-
+  if (motionResult == HIGH) {
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    digitalWrite(LED_BUILTIN, LOW);
   }
+  
 }
 ```
