@@ -1,4 +1,4 @@
-# arduino-motion-sensor
+# Arduino and a Motion Sensor
 
 A basic example of reacting to the status of a motion sensor using an Arduino and the built-in LED.
 
